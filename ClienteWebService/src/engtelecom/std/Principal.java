@@ -10,11 +10,23 @@ package engtelecom.std;
  */
 public class Principal {
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
-        // TODO code application logic here
+        int i = somar(10, 2);
+        int j = subtrair(10, 2);
+
+        System.out.println("i: " + i + ", j: " + j);
     }
-    
+
+    private static int somar(int a, int b) {
+        engtelecom.std.Calculadora_Service service = new engtelecom.std.Calculadora_Service();
+        engtelecom.std.Calculadora port = service.getCalculadoraPort();
+        return port.somar(a, b);
+    }
+
+    private static int subtrair(int a, int b) {
+        engtelecom.std.Calculadora_Service service = new engtelecom.std.Calculadora_Service();
+        engtelecom.std.Calculadora port = service.getCalculadoraPort();
+        return port.subtrair(a, b);
+    }
+
 }
